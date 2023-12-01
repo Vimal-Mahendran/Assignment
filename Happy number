@@ -1,0 +1,42 @@
+#include <iostream>
+
+int calculateSquareSum(int number) {
+    int sum = 0;
+    while (number > 0) {
+        int digit = number % 10;
+        sum += digit * digit;
+        number /= 10;
+    }
+    return sum;
+}
+
+int isHappyNumber(int number) {
+    if (number <= 0) {
+        return 0; // Happy numbers are positive integers
+    }
+
+    int slow = number;
+    int fast = number;
+
+    do {
+        slow = calculateSquareSum(slow);
+        fast = calculateSquareSum(calculateSquareSum(fast));
+    } while (slow != fast);
+
+    return (slow == 1) ? 1 : 0;
+}
+
+int main() {
+    int num;
+
+    std::cout << "Enter a positive integer: ";
+    std::cin >> num;
+
+    if (isHappyNumber(num)) {
+        std::cout << num << " is a happy number." << std::endl;
+    } else {
+        std::cout << num << " is not a happy number." << std::endl;
+    }
+
+    return 0;
+}
