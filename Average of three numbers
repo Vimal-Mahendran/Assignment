@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int m , n , o;
+    cout << "Enter the numbers :";
+    cin >> m >> n >> o;
+    cout << endl;
+    float k = (m + n + o)/3.0;
+    cout << "Average of three numbers :" << k; 
+}
