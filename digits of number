@@ -1,0 +1,26 @@
+#include <iostream>
+
+int main() {
+    int number, digit;
+
+    std::cout << "Enter an integer: ";
+    std::cin >> number;
+
+    int absNumber = abs(number);
+
+    std::cout << "Digits of " << number << " are: ";
+
+    if (absNumber == 0) {
+        std::cout << "0"; 
+    } else {
+        while (absNumber > 0) {
+            digit = absNumber % 10;
+            std::cout << digit << " ";
+            absNumber /= 10;
+        }
+    }
+
+    std::cout << std::endl;
+
+    return 0;
+}
