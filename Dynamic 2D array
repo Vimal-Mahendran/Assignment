@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int rows, cols;
+
+    cout << "Enter the number of rows: ";
+    cin >> rows;
+    cout << "Enter the number of columns: ";
+    cin >> cols;
+
+    int* dynamic2DArray = new int[rows * cols];
+
+    cout << "Enter values for the 2D array:\n";
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            cout << "Enter value for element at row " << i+1 << ", column " << j+1 << ": ";
+            cin >> dynamic2DArray[i * cols + j];
+        }
+    }
+
+    cout << "Values in the dynamic 2D array are:\n";
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            cout << dynamic2DArray[i * cols + j] << " ";
+        }
+        cout << endl;
+    }
+
+    delete[] dynamic2DArray;
+
+    return 0;
+}
