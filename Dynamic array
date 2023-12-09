@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int size;
+
+    cout << "Enter the size of the array: ";
+    cin >> size;
+
+    int* dynamicArray = new int[size];
+
+    cout << "Enter " << size << " values for the array:\n";
+    for (int i = 0; i < size; ++i) {
+        cout << "Enter value for index " << i << ": ";
+        cin >> dynamicArray[i];
+    }
+
+    cout << "Values in the dynamic array are:\n";
+    for (int i = 0; i < size; ++i) {
+        cout << "Value at index " << i << ": " << dynamicArray[i] <<"\n;
+    }
+    return 0;
+}
