@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+     int i, size, x, pos;
+     int a[] = {-1, 87, -68, 10, 8};
+ 
+     size = sizeof(a)/sizeof(a[0]);
+ 
+     cout << "The array elements before deletion operation:\n";
+ 
+     for(i = 0; i < size; i++)
+        cout << "a[" << i+1 << "] = " << a[i] << "\n";
+ 
+     cout << "\nEnter the position from where you wish to delete the element: ";
+     cin >> pos;
+ 
+     cout << "\nThe array elements after deletion operation are: ";
+ 
+     for(i = pos - 1; i < size; i++)
+        a[i] = a[i+1];
+ 
+     size = size - 1;
+ 
+     for(i = 0; i < size; i++)
+        cout << "\na[" << i+1 << "] = " << a[i];
+     return 0;
+ 
+}
