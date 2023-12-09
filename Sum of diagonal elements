@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int size;
+
+    cout << "Enter the size of the square matrix: ";
+    cin >> size;
+
+    int matrix[size][size];
+
+    cout << "Enter values for the square matrix:\n";
+    for (int i = 0; i < size; ++i) {
+        for (int j = 0; j < size; ++j) {
+            cout << "Enter value for element at row " << i+1 << ", column " << j+1 << ": ";
+            cin >> matrix[i][j];
+        }
+    }
+
+    int diagonalSum = 0;
+    for (int i = 0; i < size; ++i) {
+        diagonalSum += matrix[i][i];
+    }
+
+    cout << "Sum of the main diagonal is: " << diagonalSum << endl;
+
+    return 0;
+}
